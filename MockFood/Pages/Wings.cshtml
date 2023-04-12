@@ -1,0 +1,59 @@
+﻿@page
+@model MockFood.Pages.WingsModel
+@{
+}
+
+<div class="text-center">
+    <div class="mainText">
+        <h1 class="display-4 text-capitalize text-black">Choose between our selection of Flavors</h1>
+        <h4>Choose one or mix and match your order and then done!</h4>
+        <h4>Your choice, your rules!</h4>       
+        <h4>Enjoy 8 pcs of flavored wings per order!</h4>
+        <p class="smallText"><i>Only one pack of 8 pieces per order</i></p>
+        
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-5">
+                <div class="makeYourOwnDiv w-100 row">
+                    <div class="col-4">
+                        <img src="/images/Wings/assorted.jpg" class="ownFlavor w-100 mt-3 mb-3" />
+                    </div>
+                    <div class="col-8 align-items-center">
+                        <div class="makeYourOwnTxt align-center">
+                            <h3 style="text-align: center;">Choose Your Own Flavor!</h3>
+                            <p style="text-align: center;">Mix and match the flavors you like.</p>
+                            <a class="btn btn-primary" style="float: center" asp-area="" asp-page="Forms/Flavor">Mix and Match!</a>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            @foreach (var wing in Model.fakeWingDB)
+            {
+                var imagePath = "/images/Wings/" + (wing.ImageTitle + ".jpg");
+
+                <div class="col-4 mb-2 mt-3">
+                    <div class="listDiv w-100 row">
+                    <img src="@imagePath" class="ownFlavor  w-100 mt-3 mb-3" asp-append-version="true" />
+                        <div class="listWingTxt align-center">
+                            <h1 style="text-align: center;">@wing.WingAssort</h1>
+
+                        </div>
+                    
+                    </div>
+                    <a class="btn btn-primary mt-1" asp-are="" asp-page="CheckOut/CheckOut"
+                   asp-route-ImageTitle="@wing.ImageTitle"
+                   asp-route-WingAssort="@wing.WingAssort"
+                   asp-route-WingPrice="@wing.WingPrice"> Place Order</a>
+                    <br />
+                    
+                </div>
+            }   
+            
+        </div>
+    </div>
+
+</div>
+

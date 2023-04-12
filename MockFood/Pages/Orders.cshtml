@@ -1,0 +1,37 @@
+﻿@page
+@model MockFood.Pages.OrdersModel
+@{
+}
+
+
+<h3>Orders</h3>
+<hr />
+<table class="table">
+    <thead>
+        <th>
+            Id
+        </th>
+        <th>
+            Pizza Name
+        </th>
+         <th>
+            Price
+        </th>
+    </thead>
+    <tbody>
+        @foreach(var order in Model.WingOrders)
+        {
+            <tr>
+                <td>
+                    @order.Id
+                </td>
+                <td>
+                    @order.WingAssort
+                </td>
+                <td>
+                    @order.BasePrice
+                </td>
+            </tr>
+        }        
+    </tbody>
+</table>

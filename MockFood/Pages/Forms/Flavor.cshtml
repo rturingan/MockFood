@@ -1,0 +1,26 @@
+﻿@page
+@model MockFood.Pages.Forms.FlavorModel
+@{
+}
+
+<div class="text-center container">
+    <h1>Choose Your Sauce!</h1>
+    <form method="post" class="mx-auto mt-5 mb-5 pt-4 pb-4 rounded-5 bg-light col-4">
+        <h4 class="mb-3">Choose your Sauce!</h4>
+        <input type="text" asp-for="Sauce.WingAssort" placeholder="Personalize your Wings.."/></br>
+        <input type="checkbox" asp-for="Sauce.ClassicBuffalo" placeholder="Classic Buffalo" />Classic Buffalo Sauce</br>
+        <input type="checkbox" asp-for="Sauce.JalapChiliCheese" placeholder="Jalapeño Chili Cheese" />Jalapeño Chili Cheese Sauce</br>
+        <input type="checkbox" asp-for="Sauce.Ranch" placeholder="Ranch Dressing" />Classic Ranch Dressing Sauce</br>
+        <input type="checkbox" asp-for="Sauce.BuffRanch" placeholder="Buffalo Ranch" />Buffalo Ranch Sauce</br>
+        <input type="checkbox" asp-for="Sauce.SweetSoy" placeholder="Sweet Soy and Garlic" />Sweet Soy and Garlic Sauce</br>
+        <input type="checkbox" asp-for="Sauce.SaltPepper" placeholder="Classic Fried" />Classic Fried Wings</br>
+        <input type="checkbox" asp-for="Sauce.HoneyBasil" placeholder="Honey Basil" />Honey Basil Sauce</br>
+        <input type="checkbox" asp-for="Sauce.SrirachaHoney" placeholder="Sriracha Honey" />Sriracha Honey Sauce</br>
+       
+                
+        <button class="btn btn-primary mt-1" type="submit">Order Up!</button>
+
+    </form>
+</div>
+
+

@@ -1,0 +1,74 @@
+﻿@page
+@model MockFood.Pages.CheckOut.CheckOutModel
+@{
+}
+
+<form id="form1" runat="server">
+    <div class="col-6 mmx-auto mb-3">
+        <h3>Customer Information</h3>
+        <input id="fname" type="text" placeholder="First Name" /></br>
+        <br />
+        <input id="lname" type="text" placeholder="Last Name" /></br>
+        <br />
+        <input id="mname" type="text" placeholder="Middle Name" /></br>
+        <br />
+        <input id="email" type="text" placeholder="Email Address" /></br>
+        <br />
+        <input id="mobile" type="text" placeholder="Mobile Number" /></br>
+        <br />
+
+    </div>
+    <hr />
+    <div>
+        <h3>Billing Information</h3>
+        <input id="billing_address1" type="text" placeholder="Address 1" /></br>
+        <br />
+        <input id="billing_address2" type="text" placeholder="Address 2" /></br>
+        <br />
+        <input id="billing_city" type="text" placeholder="City" /></br>
+        <br />
+        <input id="billing_state" type="text" placeholder="Municipality" /></br>
+        <br />
+        <input id="billing_zip" type="text" placeholder="Zip Code" /></br>
+        <br />
+        <input id="billing_country" type="text" placeholder="Country" /></br>
+        <br />
+
+       
+    </div>
+    <hr />
+    <div >
+        <h3>Shipping Information</h3>
+
+        <input id="shipping_address1" type="text" placeholder="Address 1" /></br>
+        <br />
+        <input id="shipping_address2" type="text" placeholder="Address 2" /></br>
+        <br />
+        <input id="shipping_city" type="text" placeholder="City" /></br>
+        <br />
+        <input id="shipping_state" type="text" placeholder="Municipality" /></br>
+        <br />
+        <input id="shipping_zip"  type="text" placeholder="Zip Code" /></br>
+        <br />
+        <input id="shipping_country" type="text" placeholder="Country" /></br>
+        <br />
+        <hr />       
+    </div>
+    <div>
+        <h3>Your Order: </h3>
+        @{
+            var imagePath = "/images/Wings/" + (@Model.ImageTitle + ".jpg");
+        }
+        <div class=>
+            <div class="mx-auto mb-5">
+                <img src=@imagePath class="w-0.5" asp-append-version="true" />
+                <p>Your order for the @Model.WingAssort Wings is ready!</p>
+                <p>Total price for your order is: PHP @Model.WingPrice</p>
+
+                <a class="btn alert-primary mt-1 mx-auto" asp-area="" asp-page="/index">Check Out!!!</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+
